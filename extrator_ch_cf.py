@@ -13,8 +13,8 @@ caminhos_arquivos_pdf = [
     "C:/Users/vanfe/OneDrive/Área de Trabalho/TCC2 Dados/chamadas regular e final pdf/sisu-2022-notas-de-corte.pdf"
 ]  
 
-valor_filtro1 = 'Russas'
-valor_filtro2 = 'RUSSAS'
+filtro_campus = 'Russas'
+filtro_campus2 = 'RUSSAS'
 
 # Pasta onde os arquivos CSV serão salvos
 pasta_resultados = "resultados ch regular e final"
@@ -50,9 +50,9 @@ for caminho_arquivo_pdf in caminhos_arquivos_pdf:
             print(aux)
 
             if aux == 'Campus':
-                df_filtrado = df[df['Campus'].str.contains(valor_filtro1, case=False, na=False)]
+                df_filtrado = df[df['Campus'].str.contains(filtro_campus, case=False, na=False)]
             if aux == 'CAMPUS':
-                df_filtrado = df[df['CAMPUS'].str.contains(valor_filtro2, case=False, na=False)]
+                df_filtrado = df[df['CAMPUS'].str.contains(filtro_campus2, case=False, na=False)]
 
             if not df_filtrado.empty:
                 for coluna in df_filtrado.columns:
